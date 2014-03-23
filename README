@@ -1,1 +1,1 @@
-Hello, WORLD!
+A very basic implementation of Conway's Game of Life. Coded in Python and using pygame to implement a GUI. Next plan is to allow the user to use the mouse to select which cells are alive and which are dead. 
