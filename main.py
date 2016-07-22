@@ -65,7 +65,7 @@ while done == False:
     # Update screen:
     pygame.display.flip()
                                                   
-    gol_funcs.updatePos(board)
+    board = gol_funcs.generate_next_board(board)
     time.sleep(0.05)
 
 pygame.quit()

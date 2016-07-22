@@ -88,23 +88,6 @@ def printBoard():
                 storeStr +=  '  '
         print storeStr
 
-
-def updatePos(board):
-
-    """Sets the array of current states equal to the values stored in the array of next states"""
-
-    for i in range(0,NUM_CELLS):
-        for j in range(0,NUM_CELLS):
-            newBoard = generate_next_board(board)
-
-    for i in range(0,NUM_CELLS):
-        for j in range(0,NUM_CELLS):
-            board[i][j] = newBoard[i][j]
-
-
-    return board
-
-
 newBoard = [['  ' for x in xrange(NUM_CELLS)] for x in xrange(NUM_CELLS)]
 
 
