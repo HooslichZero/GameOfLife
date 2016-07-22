@@ -1,7 +1,8 @@
 import time
-from functions import *
+
 import pygame
 
+import game_of_life_funcs as gol_funcs
 
 # Define some colours:
 BLACK = ( 0, 0, 0)
@@ -19,7 +20,7 @@ margin = 3
 pygame.init()
 
 # Initialise boards:
-board = initialiseBoard()
+board = gol_funcs.initialiseBoard()
 
 # Set height and width of screen:
 size = [463,463]
@@ -48,8 +49,8 @@ while done == False:
     screen.fill(BLACK)
 
     # Draw grid:
-    for i in range(0,n):
-        for j in range(0,n):
+    for i in range(0,gol_funcs.n):
+        for j in range(0,gol_funcs.n):
             color = WHITE
             if board[i][j] == 1:
                 color = RED
@@ -61,7 +62,7 @@ while done == False:
     # Update screen:
     pygame.display.flip()
                                                   
-    updatePos(board)
+    gol_funcs.updatePos(board)
     time.sleep(0.05)
 
 pygame.quit()
