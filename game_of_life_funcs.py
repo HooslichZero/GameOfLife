@@ -62,7 +62,7 @@ def generate_next_board(board):
     """Generate the next board with updated conditions for each square"""
 
     neighbours_board = count_neighbours(board)
-    new_board = [[0 for x in xrange(NUM_CELLS)] for x in xrange(NUM_CELLS)]
+    new_board = [[0 for _ in xrange(NUM_CELLS)] for _ in xrange(NUM_CELLS)]
 
     for i in xrange(NUM_CELLS):
         for j in xrange(NUM_CELLS):
