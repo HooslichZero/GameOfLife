@@ -59,8 +59,8 @@ while done == False:
                 color = RED
             pygame.draw.rect(screen, color, [(margin+width)*j + margin, (margin+height)*i+margin, width, height])
 
-    # Limit to 20 FPS:
-    clock.tick(20)
+    # Limit updates to 4 per second
+    clock.tick(4)
 
     # Update screen:
     pygame.display.flip()
