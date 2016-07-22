@@ -10,7 +10,7 @@ import game_of_life_globals as gol_globals
 NUM_CELLS = gol_globals.NUM_CELLS
 
 
-def nextBoard(board):
+def generate_next_board(board):
 
     """Generate the next board with updated conditions for each square"""
 
@@ -95,7 +95,7 @@ def updatePos(board):
 
     for i in range(0,NUM_CELLS):
         for j in range(0,NUM_CELLS):
-            newBoard = nextBoard(board)
+            newBoard = generate_next_board(board)
 
     for i in range(0,NUM_CELLS):
         for j in range(0,NUM_CELLS):
