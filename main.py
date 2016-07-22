@@ -3,6 +3,9 @@ import time
 import pygame
 
 import game_of_life_funcs as gol_funcs
+import game_of_life_globals as gol_globals
+
+NUM_CELLS = gol_globals.NUM_CELLS
 
 # Define some colours:
 BLACK = ( 0, 0, 0)
@@ -49,8 +52,8 @@ while done == False:
     screen.fill(BLACK)
 
     # Draw grid:
-    for i in range(0,gol_funcs.n):
-        for j in range(0,gol_funcs.n):
+    for i in range(0,NUM_CELLS):
+        for j in range(0,NUM_CELLS):
             color = WHITE
             if board[i][j] == 1:
                 color = RED
