@@ -10,9 +10,15 @@ import game_of_life_globals as gol_globals
 NUM_CELLS = gol_globals.NUM_CELLS
 
 
-def generate_next_board(board):
+def count_neighbours(board):
 
-    """Generate the next board with updated conditions for each square"""
+    """
+    Return an array where each cell tells us how
+    many neighbours that cell has in the current
+    board.
+    """
+
+    neighbours_board = [[0 for _ in xrange(NUM_CELLS)] for _ in xrange(NUM_CELLS)]
 
     for i in range(0,NUM_CELLS):
         for j in range(0,NUM_CELLS):
@@ -45,6 +51,23 @@ def generate_next_board(board):
             if j <= NUM_CELLS-2:
                 if board[i][j+1] == 1:
                         neighbours += 1
+
+            neighbours_board[i][j] = neighbours
+
+    return neighbours_board
+
+
+def generate_next_board(board):
+
+    """Generate the next board with updated conditions for each square"""
+
+    neighbours_board = count_neighbours(board)
+    newBoard = [[0 for x in xrange(NUM_CELLS)] for x in xrange(NUM_CELLS)]
+
+    for i in xrange(NUM_CELLS):
+        for j in xrange(NUM_CELLS):
+
+            neighbours = neighbours_board[i][j]
 
             if (neighbours < 2 or neighbours >3) and board[i][j]==1:
                 newBoard[i][j] = 0
@@ -87,8 +110,6 @@ def printBoard():
             else:
                 storeStr +=  '  '
         print storeStr
-
-newBoard = [['  ' for x in xrange(NUM_CELLS)] for x in xrange(NUM_CELLS)]
 
 
 def makeGlider(board):
