@@ -62,7 +62,7 @@ def generate_next_board(board):
     """Generate the next board with updated conditions for each square"""
 
     neighbours_board = count_neighbours(board)
-    newBoard = [[0 for x in xrange(NUM_CELLS)] for x in xrange(NUM_CELLS)]
+    new_board = [[0 for x in xrange(NUM_CELLS)] for x in xrange(NUM_CELLS)]
 
     for i in xrange(NUM_CELLS):
         for j in xrange(NUM_CELLS):
@@ -70,15 +70,15 @@ def generate_next_board(board):
             neighbours = neighbours_board[i][j]
 
             if (neighbours < 2 or neighbours >3) and board[i][j]==1:
-                newBoard[i][j] = 0
+                new_board[i][j] = 0
 
             elif neighbours == 3 and board[i][j]==0:
-                newBoard[i][j] = 1
+                new_board[i][j] = 1
 
             else:
-                newBoard[i][j] = board[i][j]
+                new_board[i][j] = board[i][j]
 
-    return newBoard
+    return new_board
 
 
 def initialiseBoard():
