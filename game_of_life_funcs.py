@@ -5,8 +5,6 @@ Functions used for the Game of Life
 
 import random
 
-import game_of_life_globals as gol_globals
-
 def count_neighbours(board, NUM_ROWS):
 
     """

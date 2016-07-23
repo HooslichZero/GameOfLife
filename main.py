@@ -3,7 +3,6 @@ import time
 import pygame
 
 import game_of_life_funcs as gol_funcs
-import game_of_life_globals as gol_globals
 
 # Define some colours:
 BLACK = ( 0, 0, 0)
