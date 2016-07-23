@@ -7,10 +7,7 @@ import random
 
 import game_of_life_globals as gol_globals
 
-NUM_CELLS = gol_globals.NUM_CELLS
-
-
-def count_neighbours(board):
+def count_neighbours(board, NUM_CELLS):
 
     """
     Return an array where each cell tells us how
@@ -58,11 +55,11 @@ def count_neighbours(board):
     return neighbours_board
 
 
-def generate_next_board(board):
+def generate_next_board(board, NUM_CELLS):
 
     """Generate the next board with updated conditions for each square"""
 
-    neighbours_board = count_neighbours(board)
+    neighbours_board = count_neighbours(board, NUM_CELLS)
     new_board = [[0 for _ in xrange(NUM_CELLS)] for _ in xrange(NUM_CELLS)]
 
     for i in xrange(NUM_CELLS):
@@ -82,7 +79,7 @@ def generate_next_board(board):
     return new_board
 
 
-def initialiseBoard():
+def initialiseBoard(NUM_CELLS):
 
     """Create the board and set the middle set of squares to random states"""
 
@@ -98,7 +95,7 @@ def initialiseBoard():
     return board
 
 
-def printBoard():
+def printBoard(NUM_CELLS):
 
     """Prints the board in the console window"""
 
@@ -112,7 +109,7 @@ def printBoard():
         print storeStr
 
 
-def makeGlider(board):
+def makeGlider(board, NUM_CELLS):
 
     """Create a glider in the top left hand corner of board"""
 
