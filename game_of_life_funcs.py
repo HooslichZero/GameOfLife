@@ -88,13 +88,12 @@ def initialiseBoard():
 
     board = [['  ' for x in xrange(NUM_CELLS)] for x in xrange(NUM_CELLS)]
 
+    # Probability that a cell in the centre of the grid is alive at the start
+    alive_probability = 0.2
+
     for i in range((NUM_CELLS/2)-5, (NUM_CELLS/2)+5):
         for j in range((NUM_CELLS/2)-5, (NUM_CELLS/2)+5):
-            x = random.randint(0, 6) 
-            if x == 1:
-                board[i][j] = 1
-            else:
-                board[i][j] = 0
+            board[i][j] = int(random.random() <= alive_probability)
 
     return board
 
