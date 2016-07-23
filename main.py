@@ -1,3 +1,8 @@
+
+"""
+Basic implementation of Conway's Game of Life
+"""
+
 import time
 
 import pygame
