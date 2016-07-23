@@ -21,8 +21,8 @@ margin = 3
 pygame.init()
 
 # Initialise boards:
-NUM_CELLS = 20
-board = gol_funcs.initialiseBoard(NUM_CELLS)
+NUM_ROWS = 20
+board = gol_funcs.initialiseBoard(NUM_ROWS)
 
 # Set height and width of screen:
 size = [463,463]
@@ -51,8 +51,8 @@ while done == False:
     screen.fill(BLACK)
 
     # Draw grid:
-    for i in range(0,NUM_CELLS):
-        for j in range(0,NUM_CELLS):
+    for i in range(0,NUM_ROWS):
+        for j in range(0,NUM_ROWS):
             color = WHITE
             if board[i][j] == 1:
                 color = RED
@@ -64,7 +64,7 @@ while done == False:
     # Update screen:
     pygame.display.flip()
                                                   
-    board = gol_funcs.generate_next_board(board, NUM_CELLS)
+    board = gol_funcs.generate_next_board(board, NUM_ROWS)
     time.sleep(0.05)
 
 pygame.quit()
