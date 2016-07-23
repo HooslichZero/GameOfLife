@@ -86,7 +86,7 @@ def initialiseBoard():
 
     """Create the board and set the middle set of squares to random states"""
 
-    board = [['  ' for x in xrange(NUM_CELLS)] for x in xrange(NUM_CELLS)]
+    board = [[0 for _ in xrange(NUM_CELLS)] for _ in xrange(NUM_CELLS)]
 
     # Probability that a cell in the centre of the grid is alive at the start
     alive_probability = 0.2
